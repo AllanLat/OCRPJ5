@@ -33,8 +33,24 @@
 	 <link rel="preconnect" href="https://fonts.googleapis.com">
 	 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-	<!-- Zone google analytics -->
-	
+	<!-- Zone google  -->
+	<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "LocalBusiness",
+		  "name": "Nina Carducci",
+		  "image": "./assets/images/nina.webp",
+		  "address": {
+			"@type": "PostalAddress",
+			"streetAddress": "68 avenue Alsace-Lorraine",
+			"addressLocality": "Bordeaux",
+			"postalCode": "33200"
+		  },
+		  "telephone": "05 56 67 78 89",
+		  "openingHours": "Mo-Fr 10:00-19:00"
+		}
+		</script>
+		
 
 </head>
 <body>
@@ -182,6 +198,28 @@
 	</div>
 </section>
 <footer id="footer">
+	<div class="container">
+		<div itemscope itemtype="http://schema.org/LocalBusiness">
+				<div class="col-12 col-sm-6">
+					
+						<h4><span itemprop="name">Nina Carducci</span></h4>
+						<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+						<span itemprop="streetAddress">68 avenue Alsace-Lorraine</span>,
+						<span itemprop="postalCode">33200</span>
+						<span itemprop="addressLocality">Bordeaux</span>,
+						<span itemprop="addressCountry">France</span>
+						</div>
+				</div>		
+				<div class="col-12 col-sm-6">
+
+					<div><strong>Téléphone:</strong> <span itemprop="telephone">05 56 67 78 89</span></div>
+					<div><strong>Horaires d'ouverture:</strong> Du lundi au vendredi de 10h à 19h.</div>
+					<meta itemprop="openingHours" content="Mo-Fr 10:00-19:00" />
+						
+			</div>
+			</div>	
+		</div>
+	</div>
 	<hr>
 	<small>Copyrigth 2023 by Nina Carducci</small>
 </footer>
