@@ -24,12 +24,14 @@
 	<meta property="twitter:image" content="./assets/images/nina.webp">
 
 	<!-- CSS  -->
-	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css" defer>
+	<!-- <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css" async="async">
 	<link rel="stylesheet" href="./assets/style.css" defer>
 	<link rel="preconnect" href="https://fonts.googleapis.com" defer>
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin defer>
-	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet" defer>
-	
+	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet" async="async">
+	 -->
+	 <link rel="preconnect" href="https://fonts.googleapis.com">
+	 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 	<!-- Zone google analytics -->
 	
@@ -190,6 +192,28 @@
 
 <script src="./assets/maugallery.js" async="async"></script>
 <script src="./assets/scripts.js" async="async"></script>
+
+<script>
+    window.addEventListener('load', function() {
+      var cssFiles = [
+        { url: './assets/bootstrap/bootstrap.min.css', rel: 'stylesheet' },
+        { url: './assets/style.css', rel: 'stylesheet' }
+      ];
+
+      cssFiles.forEach(function(cssFile) {
+        var link = document.createElement('link');
+        link.rel = cssFile.rel;
+        link.href = link.dataset.href = cssFile.url;
+        document.head.appendChild(link);
+      });
+
+      var fontLink = document.createElement('link');
+      fontLink.rel = 'stylesheet';
+      fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap';
+      document.head.appendChild(fontLink);
+    });
+  </script>
+ 
 
 </body> 
 </html>
