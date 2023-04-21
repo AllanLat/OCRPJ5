@@ -152,7 +152,7 @@
           });
         }
         let index = imagesCollection.indexOf(activeImage);
-        let next = imagesCollection[index - 1] || imagesCollection[imagesCollection.length - 1];
+        let next = imagesCollection[index + 1] || imagesCollection[imagesCollection.length + 1];
         $("#" + lightboxId).find(".lightboxImage").attr("src", next);
     },
     createLightBox(gallery, lightboxId, navigation) {
