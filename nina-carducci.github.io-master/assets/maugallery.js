@@ -139,7 +139,7 @@
       
     },
     nextImage(lightboxId) {
-      let activeImage = $("#" + lightboxId).find(".lightboxImage").attr("src");
+        let activeImage = $("#" + lightboxId).find(".lightboxImage").attr("src");
         let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
         let imagesCollection = [];
         if (activeTag === "all") {
