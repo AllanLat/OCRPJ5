@@ -1,4 +1,7 @@
 # Cache control header
+# Activer la mise en cache
+Header set Cache-Control "max-age=86400, public"
+
 <IfModule mod_headers.c>
     # Enable expirations
     ExpiresActive On
