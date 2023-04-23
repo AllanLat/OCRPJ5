@@ -42,6 +42,7 @@
 		}
 	</script>
 		
+	<script src="budget.json"></script>
 
 </head>
 <body>
@@ -232,6 +233,7 @@
         var link = document.createElement('link');
         link.rel = cssFile.rel;
         link.href = link.dataset.href = cssFile.url;
+		link.async = "async";
         document.head.appendChild(link);
       });
 
