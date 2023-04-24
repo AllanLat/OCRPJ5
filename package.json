@@ -1,0 +1,19 @@
+{
+  "name": "projet5",
+  "version": "1.0.0",
+  "description": "optimisation du site de nina carducci",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AllanLat/OCRPJ5.git"
+  },
+  "author": "Allan Latruffe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AllanLat/OCRPJ5/issues"
+  },
+  "homepage": "https://github.com/AllanLat/OCRPJ5#readme"
+}
