@@ -1,20 +1,35 @@
 name: Build and Deploy
-
 on:
   push:
-    branches: [ main ]
-
+    branches:
+      - main
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Cache dependencies and assets
-      uses: actions/cache@v2
-      with:
-        path: |
-          index.html
-          assets/**
-        key: ${{ runner.os }}-build-${{ hashFiles('index.html','assets/**') }}
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Install dependencies
+        run: npm install
+      - name: Cache assets
+        uses: actions/cache@v2
+        with:
+          path: |
+            assets/**/*.css
+            assets/**/*.js
+            assets/**/*.avif
+            assets/**/*.webp
+            assets/**/*.jpg
+            assets/**/*.png
+          key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.2
+        with:
+          branch: gh-pages
+          folder: build
