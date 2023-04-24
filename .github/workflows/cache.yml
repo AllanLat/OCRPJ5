@@ -18,9 +18,3 @@ jobs:
           index.html
           assets/**
         key: ${{ runner.os }}-build-${{ hashFiles('index.html','assets/**') }}
-
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@4.1.2
-      with:
-        branch: gh-pages
-        folder: .
