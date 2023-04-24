@@ -1,15 +1,12 @@
-name: Cache dependencies and assets
+name: Build and Deploy
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -18,8 +15,12 @@ jobs:
       uses: actions/cache@v2
       with:
         path: |
-          node_modules
-          assets
-        key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-
+          index.html
+          assets/**
+        key: ${{ runner.os }}-build-${{ hashFiles('index.html','assets/**') }}
+
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.2
+      with:
+        branch: gh-pages
+        folder: .
